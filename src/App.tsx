@@ -1,9 +1,11 @@
 import './App.css'
+import { MobileBackgroundImage } from './components/background-images/Mobile-Background-Image'
 
 function App() {
 
   return (
-    <h1>ss!</h1>
+    <MobileBackgroundImage />
+
   )
 }
 
