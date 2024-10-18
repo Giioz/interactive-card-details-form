@@ -1,5 +1,3 @@
-// import React from "react"
-// import { UseFormRegister } from "react-hook-form"
 
 import { UseFormRegister } from "react-hook-form"
 import { FormValues } from "../Forms-Section"
