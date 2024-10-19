@@ -7,7 +7,7 @@ export const CardBack = () => {
           <p className="text-[9px] text-white">000</p>
         </div>
         <div className="w-[100px] mx-auto mt-[15px]">
-          <img src="./public/icons/card-background-title.svg" alt="bg" />
+          <img src="./icons/card-background-title.svg" alt="bg" />
         </div>
     </div>
   )
