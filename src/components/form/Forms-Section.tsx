@@ -7,21 +7,22 @@ import { CardNumber } from "./CardNumber/CardNumber"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 
-
 const schema = z.object({
   cardHolder: z.string()
       .min(1, { message: "Card Holder is required"})
       .refine((CardHolder) => {
+          
+          
           const names = CardHolder.trim().split(" ")
           return names.length === 2 && !CardHolder.endsWith(' ') && !CardHolder.startsWith(' ');
          
-      }, {message : "Please Enter Full Name e.g 'Felicia Leire'"}),
+      }, {message : `Please Enter Full Name e.g 'Felicia Leire'`}),
 
   cardNumber: z.number({ message: "Card Number should only contain numbers"})
       .min(16, { message: "Card Number Should Be 16 Characters" })
       .max(16, { message: "Card Number Should Be 16 Characters" }),
   cardDate : z.object({
-    mm: z.string().min(1, { message: "blbla" }).min(2).max(2),
+    mm: z.string().min(1, { message: "Can't Be Blank" }).min(2).max(2, { message: "Can't Be more than 2" }),
     yy: z.string().min(2).max(2),
   }),
   cvc: z.string().min(3).max(3),
@@ -40,6 +41,7 @@ export const FormsSection = () => {
      formState: { errors },
   } = useForm<FormValues>({
         resolver : zodResolver(schema),
+        mode: "onChange"
       })
 
   const onSubmit: SubmitHandler<FormValues> = (data) => console.log(data)
