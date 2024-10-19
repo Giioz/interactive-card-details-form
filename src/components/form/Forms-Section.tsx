@@ -42,7 +42,7 @@ export const FormsSection = () => {
         resolver : zodResolver(schema),
       })
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => console.log(schema)
+  const onSubmit: SubmitHandler<FormValues> = (data) => console.log(data)
   
  
 
