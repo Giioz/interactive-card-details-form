@@ -6,29 +6,29 @@ import { CardHolder } from "./CardHolder/CardHolder"
 import { CardNumber } from "./CardNumber/CardNumber"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { useDispatch, useSelector } from "react-redux"
+import { RootState } from "../../redux/store/store"
+import { addCard, initialInfo } from "../../redux/features/card/cardSlice"
 
-const schema = z.object({
+export const schema = z.object({
   cardHolder: z.string()
       .min(1, { message: "Card Holder is required"})
       .refine((CardHolder) => {
-          
-          
           const names = CardHolder.trim().split(" ")
           return names.length === 2 && !CardHolder.endsWith(' ') && !CardHolder.startsWith(' ');
          
-      }, {message : `Please Enter Full Name e.g 'Felicia Leire'`}),
+      },
+      {message : `Please Enter Full Name e.g 'Felicia Leire'`}),
 
   cardNumber: z.number({ message: "Card Number should only contain numbers"})
-      .min(16, { message: "Card Number Should Be 16 Characters" })
-      .max(16, { message: "Card Number Should Be 16 Characters" }),
+      .max(1000000000000000, { message: "Card Holder should contain 16 digit" }),
+      
   cardDate : z.object({
-    mm: z.string().min(1, { message: "Can't Be Blank" }).min(2).max(2, { message: "Can't Be more than 2" }),
-    yy: z.string().min(2).max(2),
+    mm: z.number({ message: "Can't be blank" }),
+    yy: z.number({ message: "Can't be blank" })
   }),
-  cvc: z.string().min(3).max(3),
+  cvc: z.number({ message: "Can't be blank" }).max(999, { message: "Should be 3 digits" })
 })
-
-
 
 export type FormValues = z.infer<typeof schema>
 
@@ -44,9 +44,13 @@ export const FormsSection = () => {
         mode: "onChange"
       })
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => console.log(data)
+  let data1 = initialInfo
+  const onSubmit: SubmitHandler<FormValues> = (data) => data1 = data
+  console.log(data1);
   
- 
+  let test = useSelector((state: RootState) => state.card.card)
+  const dispatch = useDispatch()
+  dispatch(addCard(data1))
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="mt-[91px] font-grotesk text-[12px] px-[16px] placeholder:text-[18px] flex flex-col items-center focus:outline-none focus:border-[#6348FE]">
@@ -55,7 +59,7 @@ export const FormsSection = () => {
           <CardNumber register={register} error={errors.cardNumber}/>
           <div className="flex gap-[11px] max-w-[327px]">
             <CardDate register={register} error={errors.cardDate} />
-            <CardCvc register={register}/>
+            <CardCvc register={register} error={errors.cvc}/>
           </div>
           <Button />
         </div>
