@@ -9,13 +9,14 @@ function App() {
 
   return (
     <>
-      <MobileBackgroundImage />
       <Provider store={store}>
+          <MobileBackgroundImage />
           <div className='px-[16px]'>
             <CardsSection />
           </div>
           <FormsSection />
       </Provider>
+
     </>
   )
 }
