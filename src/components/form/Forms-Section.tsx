@@ -6,9 +6,8 @@ import { CardHolder } from "./CardHolder/CardHolder"
 import { CardNumber } from "./CardNumber/CardNumber"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useDispatch, useSelector } from "react-redux"
-import { RootState } from "../../redux/store/store"
-import { addCard, initialInfo } from "../../redux/features/card/cardSlice"
+import { useDispatch} from "react-redux"
+import { addCard} from "../../redux/features/card/cardSlice"
 
 export const schema = z.object({
   cardHolder: z.string()
@@ -44,13 +43,13 @@ export const FormsSection = () => {
         mode: "onChange"
       })
 
-  let data1 = initialInfo
-  const onSubmit: SubmitHandler<FormValues> = (data) => data1 = data
-  console.log(data1);
-  
-  let test = useSelector((state: RootState) => state.card.card)
   const dispatch = useDispatch()
-  dispatch(addCard(data1))
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
+    dispatch(addCard(data))
+  };
+  
+  
+  
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="mt-[91px] font-grotesk text-[12px] px-[16px] placeholder:text-[18px] flex flex-col items-center focus:outline-none focus:border-[#6348FE]">
