@@ -1,4 +1,9 @@
-export const CardFront = () => {
+import { useSelector } from "react-redux"
+import { RootState } from "../../../redux/store/store"
+
+export const CardFront = () => {1
+  const card = useSelector((state: RootState) => state.card.card)
+  
   return (
     <div className="bg-[url(./icons/card-mobile.svg)] w-[285px] h-[156.21px] absolute z-10 bottom-0 px-[19px] py-[17px] font-grotesk">
       <div className="w-full flex items-center gap-[10px]">
@@ -7,7 +12,8 @@ export const CardFront = () => {
       </div>
       <div className="w-full mt-[37px] font-medium text-white">
         <div>
-            <p className="text-[18px] tracking-[2.2px]">0000 0000 0000 0000</p>
+            <p onClick={() => console.log(card)}className="text-[18px] tracking-[2.2px]">{card?.cardNumber}</p>
+
         </div>
         <div className="text-[9px] tracking-[1.3px] flex justify-between mt-[17px] items-center">
           <div>
