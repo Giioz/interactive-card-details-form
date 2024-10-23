@@ -17,7 +17,7 @@ interface CardState {
 
 export const initialInfo: Card = {
      cardHolder: "Jane Appleseed",
-    cardNumber: 0o0,
+    cardNumber: 0,
     cardDate: {
         mm: 0o0,
         yy: 0o0,
@@ -26,13 +26,7 @@ export const initialInfo: Card = {
 }
 
 const initialState: CardState =  {
-    // cardHolder: "Jane Appleseed",
-    // cardNumber: 0o0,
-    // cardDate: {
-    //     mm: 0o0,
-    //     yy: 0o0,
-    // },
-    // cardCvc: 123
+  
     card: initialInfo
 }
 
@@ -42,14 +36,11 @@ export const CardSlice = createSlice({
     initialState,
     reducers: {
         addCard: (state, action: PayloadAction<Card>) => {
-            // state.cardHolder = action.payload.cardHolder,
-            // state.cardNumber = action.payload.cardNumber
-            // state.cardDate.mm = action.payload.cardDate.mm
-            // state.cardDate.yy = action.payload.cardDate.yy
-            // state.cardCvc = action.payload.cardCvc
             state.card = action.payload
-        }
-    }
+        },
+        
+    },
+   
 
 })
 
