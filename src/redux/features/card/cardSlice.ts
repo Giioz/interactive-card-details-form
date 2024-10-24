@@ -4,25 +4,26 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 
 export interface Card {
     cardHolder: string,
-    cardNumber: number,
+    cardNumber: string,
     cardDate: {
-        mm: number,
-        yy: number,
+        mm: string,
+        yy: string,
     },
-    cvc: number,
+    cvc: string,
 }
 interface CardState {
     card : Card | null;
 }
 
+
 export const initialInfo: Card = {
      cardHolder: "Jane Appleseed",
-    cardNumber: 0,
+    cardNumber: "0000000000000000",
     cardDate: {
-        mm: 0o0,
-        yy: 0o0,
+        mm: "00",
+        yy: "00",
     },
-    cvc: 123
+    cvc: "000"
 }
 
 const initialState: CardState =  {
