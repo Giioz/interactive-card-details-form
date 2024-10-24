@@ -12,6 +12,7 @@ import { addCard} from "../../redux/features/card/cardSlice"
 export const schema = z.object({
   cardHolder: z.string()
       .min(1, { message: "Card Holder is required"})
+      .max(20, { message: "Name is too long"})
       .refine((CardHolder) => {
           const names = CardHolder.trim().split(" ")
           return names.length === 2 && !CardHolder.endsWith(' ') && !CardHolder.startsWith(' ');
@@ -19,14 +20,15 @@ export const schema = z.object({
       },
       {message : `Please Enter Full Name e.g 'Felicia Leire'`}),
 
-  cardNumber: z.number({ message: "Card Number should only contain numbers"})
-      .max(1000000000000000, { message: "Card Holder should contain 16 digit" }),
+  cardNumber: z.string({ message: "Card Number should only contain numbers"})
+      .min(16, { message: "Card Holder should contain 16 digit" })
+      .max(16, { message: "Card Holder should contain 16 digit" }),
       
   cardDate : z.object({
-    mm: z.number({ message: "Can't be blank" }),
-    yy: z.number({ message: "Can't be blank" })
+    mm: z.string({ message: "Can't be blank" }).max(2, { message: "Should be '00/00'" }),
+    yy: z.string({ message: "Can't be blank" }).max(2, { message: "Should be '00/00'"})
   }),
-  cvc: z.number({ message: "Can't be blank" }).max(999, { message: "Should be 3 digits" })
+  cvc: z.string({ message: "Can't be blank" }).max(3, { message: "Should be 3 digits" })
 })
 
 export type FormValues = z.infer<typeof schema>
