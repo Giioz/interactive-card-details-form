@@ -13,12 +13,12 @@ export const CardDate: React.FC<CardHolderProps> = ({ register, error }) => {
     <div>
         <label htmlFor="">EXP. DATE (MM/YY)</label>
         <div className="flex gap-[8px] mt-[9px]">
-            <input {...register("cardDate.mm",  {valueAsNumber : true})} type="text" placeholder="MM" 
+            <input {...register("cardDate.mm")} type="text" placeholder="MM" 
                   className={`h-[45px] w-[72px] py-[11px] pl-[16px] rounded-[8px] border-[#DFDEE0] border-[1px] 
                               placeholder:text-[18px] focus:outline-none focus:border-[#6348FE]
                               ${error?.mm ? 'border-red-300' : ''}`
                               }/>
-            <input {...register("cardDate.yy",  {valueAsNumber : true})} type="text" placeholder="YY" 
+            <input {...register("cardDate.yy")} type="text" placeholder="YY" 
                    className={`h-[45px] w-[72px] py-[11px] pl-[16px] rounded-[8px] border-[#DFDEE0] border-[1px] 
                               placeholder:text-[18px] focus:outline-none focus:border-[#6348FE]
                               ${error?.yy ? 'border-red-300' : ''}`}
