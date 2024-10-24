@@ -1,5 +1,5 @@
 import { SubmitHandler, useForm } from "react-hook-form"
-import { Button } from "./Button/Button"
+import { Button } from "../Button/Button"
 import { CardCvc } from "./CardCvc/CardCvc"
 import { CardDate } from "./CardDate/CardDate"
 import { CardHolder } from "./CardHolder/CardHolder"
@@ -8,6 +8,7 @@ import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useDispatch} from "react-redux"
 import { addCard} from "../../redux/features/card/cardSlice"
+import { setIsSubmited } from "../../redux/features/isSubmited/isSubmited"
 
 export const schema = z.object({
   cardHolder: z.string()
@@ -48,9 +49,12 @@ export const FormsSection = () => {
   const dispatch = useDispatch()
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     dispatch(addCard(data))
+    dispatch(setIsSubmited())
   };
   
-  
+  const onclick = () => {
+    console.log(123);
+  }
   
 
   return (
@@ -62,7 +66,7 @@ export const FormsSection = () => {
             <CardDate register={register} error={errors.cardDate} />
             <CardCvc register={register} error={errors.cvc}/>
           </div>
-          <Button />
+          <Button content={"Confirm"} onclick={onclick}/>
         </div>
     </form>
   )
