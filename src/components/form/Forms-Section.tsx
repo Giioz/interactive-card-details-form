@@ -26,10 +26,10 @@ export const schema = z.object({
       .max(16, { message: "Card Holder should contain 16 digit" }),
       
   cardDate : z.object({
-    mm: z.string({ message: "Can't be blank" }).max(2, { message: "Should be '00/00'" }),
-    yy: z.string({ message: "Can't be blank" }).max(2, { message: "Should be '00/00'"})
+    mm: z.string({ message: "Can't be blank" }).max(2, { message: "Should be '00/00'" }).min(2, { message: "Should be '00/00'" }),
+    yy: z.string({ message: "Can't be blank" }).max(2, { message: "Should be '00/00'"}).min(2, { message: "Should be '00/00'" })
   }),
-  cvc: z.string({ message: "Can't be blank" }).max(3, { message: "Should be 3 digits" })
+  cvc: z.string({ message: "Can't be blank" }).max(3, { message: "Should be 3 digits" }).min(3, { message: "Should be 3 digits" })
 })
 
 export type FormValues = z.infer<typeof schema>
@@ -47,26 +47,24 @@ export const FormsSection = () => {
       })
 
   const dispatch = useDispatch()
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
-    dispatch(addCard(data))
-    dispatch(setIsSubmited())
+  const onSubmit: SubmitHandler<FormValues> = async (data) => {
+    await dispatch(addCard(data)); 
+    dispatch(setIsSubmited());    
   };
   
-  const onclick = () => {
-    console.log(123);
-  }
+  
   
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="mt-[91px] font-grotesk text-[12px] px-[16px] placeholder:text-[18px] flex flex-col items-center focus:outline-none focus:border-[#6348FE]">
-        <div className="flex flex-col gap-[20px]">
+        <div className="flex flex-col gap-[20px] w-[327px] lg:w-[381px]">
           <CardHolder register={register} error={errors.cardHolder}/>
           <CardNumber register={register} error={errors.cardNumber}/>
-          <div className="flex gap-[11px] max-w-[327px]">
+          <div className="flex gap-[11px] w-[327px] lg:w-[381px] lg:gap-[20px]">
             <CardDate register={register} error={errors.cardDate} />
             <CardCvc register={register} error={errors.cvc}/>
           </div>
-          <Button content={"Confirm"} onclick={onclick}/>
+          <Button content={"Confirm"}/>
         </div>
     </form>
   )

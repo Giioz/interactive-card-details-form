@@ -10,7 +10,7 @@ interface CardHolderProps {
 
 export const CardHolder: React.FC<CardHolderProps> = ( {register, error }) => {
   return (
-    <div className="flex flex-col max-w-[327px]">
+    <div className="flex flex-col max-w-full">
         <label htmlFor="" className="mb-[9px]">CARDHOLDER NAME</label>
         <input 
               {...register("cardHolder")}

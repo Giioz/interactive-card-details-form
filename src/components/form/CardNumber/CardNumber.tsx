@@ -11,7 +11,7 @@ interface CardNumberProps {
 
 export const CardNumber: React.FC<CardNumberProps> = ({ register, error }) => {
     return (
-      <div className="flex flex-col max-w-[327px] gap-[9px]">
+      <div className="flex flex-col max-w-[full] gap-[9px]">
           <label htmlFor="">CARD NUMBER</label>
           <input {...register("cardNumber")} type="text" placeholder="e.g. 1234 5678 9123 0000" 
                  className={`h-[45px] py-[11px] pl-[16px] rounded-[8px] border-[#DFDEE0] border-[1px]
