@@ -17,7 +17,7 @@ export const CardFront = () => {
   let formatedCardNumber = formatText(card!.cardNumber)
   
   return (
-    <div className="bg-[url(./icons/card-mobile.svg)] lg:bg-[url(./icons/card-desktop.svg)] w-[285px] h-[156.21px] absolute z-10 bottom-0 px-[19px] py-[14px] font-grotesk lg:min-w-[447px] lg:min-h-[245px] lg:top-0 lg:right-0 lg:px-[32px] lg:py-[28px]">
+    <div className="bg-[url(/icons/card-mobile.svg)] lg:bg-[url(./icons/card-desktop.svg)] w-[285px] h-[156.21px] absolute z-10 bottom-0 px-[19px] py-[14px] font-grotesk lg:min-w-[447px] lg:min-h-[245px] lg:top-0 lg:right-0 lg:px-[32px] lg:py-[28px]">
       <div className="w-full flex items-center gap-[10px]">
         <div className="w-[30px] h-[30px] rounded-full bg-white lg:w-[46px] lg:h-[46px]"></div>
         <div className="w-[13px] h-[13px] rounded-full border-white border-[1px] inset-1 lg:w-[21px] lg:h-[21px]"></div>
