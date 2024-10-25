@@ -1,0 +1,50 @@
+<svg width="447.000000" height="245.000000" viewBox="0 0 447 245" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<filter id="filter_0_274_dd" x="56.176819" y="-154.823181" width="432.957092" height="432.957092" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+			<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+			<feGaussianBlur stdDeviation="26.6667" result="effect_layerBlur_1"/>
+		</filter>
+		<filter id="filter_0_275_dd" x="155.176758" y="-159.823181" width="432.957092" height="432.957092" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+			<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+			<feGaussianBlur stdDeviation="26.6667" result="effect_layerBlur_1"/>
+		</filter>
+		<filter id="filter_0_276_dd" x="24.176819" y="-2.823151" width="432.957092" height="432.957062" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+			<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+			<feGaussianBlur stdDeviation="26.6667" result="effect_layerBlur_1"/>
+		</filter>
+		<linearGradient x1="-128.592163" y1="35.240616" x2="0.000000" y2="280.240540" id="paint_linear_0_272_0" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#6348FE"/>
+			<stop offset="1.000000" stop-color="#610595"/>
+		</linearGradient>
+		<linearGradient x1="-128.591919" y1="35.240479" x2="0.000137" y2="280.240479" id="paint_linear_0_271_0" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#6348FE"/>
+			<stop offset="1.000000" stop-color="#610595"/>
+		</linearGradient>
+	</defs>
+	<rect id="Mask" rx="10.000000" width="447.000000" height="245.000000" fill="url(#paint_linear_0_272_0)" fill-opacity="1.000000"/>
+	<rect id="Mask" rx="10.000000" width="447.000000" height="245.000000" stroke="#979797" stroke-opacity="0" stroke-width="0.000000"/>
+	<mask id="mask0_271" mask-type="alpha" maskUnits="userSpaceOnUse" x="0.000000" y="0.000000" width="447.000000" height="245.000000">
+		<rect id="Mask" rx="10.000000" width="447.000000" height="245.000000" fill="url(#paint_linear_0_271_0)" fill-opacity="1.000000"/>
+		<rect id="Mask" rx="10.000000" width="447.000000" height="245.000000" stroke="#979797" stroke-opacity="0" stroke-width="0.000000"/>
+	</mask>
+	<g mask="url(#mask0_271)">
+		<g opacity="0.847405" filter="url(#filter_0_274_dd)" style="mix-blend-mode:normal">
+			<ellipse id="Oval Copy 2" rx="65.500000" ry="181.500000" transform="matrix(0.707107 0.707107 -0.707107 0.707107 272.655 61.6554)" fill="#D53AFF" fill-opacity="1.000000"/>
+			<ellipse id="Oval Copy 2" rx="65.500000" ry="181.500000" transform="matrix(0.707107 0.707107 -0.707107 0.707107 272.655 61.6554)" stroke="#979797" stroke-opacity="0" stroke-width="0.000000"/>
+		</g>
+		<g opacity="0.847405" filter="url(#filter_0_275_dd)" style="mix-blend-mode:normal">
+			<ellipse id="Oval Copy 4" rx="65.500000" ry="181.500000" transform="matrix(0.707107 0.707107 -0.707107 0.707107 371.655 56.6554)" fill="#FF834A" fill-opacity="1.000000"/>
+			<ellipse id="Oval Copy 4" rx="65.500000" ry="181.500000" transform="matrix(0.707107 0.707107 -0.707107 0.707107 371.655 56.6554)" stroke="#979797" stroke-opacity="0" stroke-width="0.000000"/>
+		</g>
+		<g opacity="0.847405" filter="url(#filter_0_276_dd)" style="mix-blend-mode:normal">
+			<ellipse id="Oval Copy 3" rx="65.500000" ry="181.500000" transform="matrix(0.707107 0.707107 -0.707107 0.707107 240.655 213.655)" fill="#47A2FF" fill-opacity="1.000000"/>
+			<ellipse id="Oval Copy 3" rx="65.500000" ry="181.500000" transform="matrix(0.707107 0.707107 -0.707107 0.707107 240.655 213.655)" stroke="#979797" stroke-opacity="0" stroke-width="0.000000"/>
+		</g>
+	</g>
+</svg>
