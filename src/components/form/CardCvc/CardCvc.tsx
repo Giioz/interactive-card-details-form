@@ -4,7 +4,9 @@ import { FormValues } from "../Forms-Section"
 
 interface CardHolderProps {
   register : UseFormRegister<FormValues>,
-  error : any
+  error : {
+    message : string
+  }
 }
 
 export const CardCvc: React.FC<CardHolderProps> = ({ register, error } ) => {
