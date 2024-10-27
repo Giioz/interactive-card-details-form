@@ -3,7 +3,7 @@ import { FormValues } from "../Forms-Section"
 
 
 interface CardHolderProps {
-  register : UseFormRegister<FormValues>,
+  register : UseFormRegister<FormValues>
   error : {
     message : string
   }
