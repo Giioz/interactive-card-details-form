@@ -10,13 +10,16 @@ import { DesktopBackgroundImage } from './components/background-images/DesktopBa
 
 function App() {
 
-  // default value is false !!!
+  // default value is false !!
   const issubmited = useSelector((state:RootState) => state.isSubmited.isSubmited)
+  
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
   });
 
+
+  // this handles window resize
   useEffect(() => {
     const handleResize = () => {
       setWindowSize({
@@ -27,7 +30,7 @@ function App() {
 
     window.addEventListener('resize', handleResize);
     
-    // Clean up the event listener on unmount
+          // clean the event listener on unmount
     return () => {
       window.removeEventListener('resize', handleResize);
     };
