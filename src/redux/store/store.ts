@@ -7,11 +7,9 @@ export const store = configureStore({
     reducer: {
         isSubmited: isSubmited,
         card: cardSlice,
-
     },
 
 })
-
 
 export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch

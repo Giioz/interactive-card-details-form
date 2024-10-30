@@ -1,6 +1,6 @@
+import { useEffect } from "react"
 import { useSelector } from "react-redux"
 import { RootState } from "../../../redux/store/store"
-import { useEffect } from "react"
 
 export const CardFront = () => {
   const card = useSelector((state: RootState) => state.card.card)
