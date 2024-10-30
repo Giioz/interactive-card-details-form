@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import './App.css'
 import { MobileBackgroundImage } from './components/background-images/Mobile-Background-Image'
 import { CardsSection } from './components/Cards/Cards-Section'
 import { FormsSection } from './components/form/Forms-Section'
@@ -7,6 +6,7 @@ import { ThankYouSection } from './components/thank-you-component/ThankYouSectio
 import { RootState } from './redux/store/store'
 import { useSelector } from 'react-redux'
 import { DesktopBackgroundImage } from './components/background-images/DesktopBackgroundImage'
+import './App.css'
 
 function App() {
 
