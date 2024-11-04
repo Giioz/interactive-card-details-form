@@ -24,14 +24,20 @@ export const CardFront = () => {
       </div>
       <div className="w-full mt-[37px] font-medium text-white lg:mt-[64px]">
         <div>
-            <p className="text-[18px] tracking-[2.2px] lg:text-[28px]">{formatedCardNumber!}</p>
+            <p className="text-[18px] tracking-[2.2px] lg:text-[28px]">
+              {formatedCardNumber!}
+            </p>
         </div>
         <div className="text-[9px] tracking-[1.3px] flex justify-between mt-[17px] mb-[18px] items-center lg:mt-[25px] lg:text-[14px]">
           <div>
-            <p className="">{card?.cardHolder}</p>
+            <p>
+              {card?.cardHolder}
+            </p>
           </div>
           <div>
-            <p>{card?.cardDate.mm}/{card?.cardDate.yy}</p>
+            <p>
+              {card?.cardDate.mm}/{card?.cardDate.yy}
+            </p>
           </div>
         </div>
       </div>
